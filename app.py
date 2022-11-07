@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+from flask_cors import cross_origin
 
 app = Flask(__name__)
 
@@ -7,6 +8,7 @@ def index():
     return render_template('index.html')
 
 @app.route('/health')
+@cross_origin()
 def health():
     return 'hello, silja!'
 
